@@ -1,0 +1,43 @@
+﻿@model List<DVDWebApi.Models.Dvd>
+@{
+    ViewBag.Title = "GetAll";
+}
+
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>List of Dvds</h2>
+        </div>
+        
+    </div>
+<div class="row">
+    <div class="col-xs-12">
+        @foreach (var dvd in @Model)
+        {
+            <div class="col-xs-8 col-sm-4 col-md-4">
+                <div class="card" style="border:2px solid #0094ff; width: 20rem; border-radius: 5px; ">
+                    <div class="pl-3 pt-1 text-center">
+                        <h4 class="card-title text-primary">@dvd.Title</h4>
+                        <p class="recentListing">@dvd.ReleaseYear</p>
+                        <p class="recentListing">@dvd.Director</p>
+                        <p class="recentListing">@dvd.Rating</p>
+                        <p class="recentListing">@dvd.Notes</p>
+                    </div>
+                    <div class="d-flex justify-content-between form-control" style="border:0px; ">
+                        <div class="col-sm-6" align="center">
+                            @Html.ActionLink("Edit", "Edit", "Listings", new { id = @dvd.DvdId }, new { @class = "btn btn-primary" })
+                        </div>
+                        <div class="col-sm-6" align="center">
+                            @using (Html.BeginForm("Delete", "Listings", new { id = @dvd.DvdId }, FormMethod.Post))
+                            {
+                                <button class="btn btn-danger" onclick="return confirm('Are you sure you want to delete @dvd.Title?');">
+                                    Delete
+                                </button>
+                            }
+                        </div>
+                    </div>
+                    <br />
+                </div>
+            </div>
+        }
+    </div>
+</div>

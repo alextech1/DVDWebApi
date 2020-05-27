@@ -1,0 +1,10 @@
+C:\Users\cashamerica12345\Documents\TheSoftwareGuild\BADGE 4\Milestone2\assignment\DVDWebApi\DVDWebApi.Data\bin\Debug\DVDWebApi.Data.dll
+C:\Users\cashamerica12345\Documents\TheSoftwareGuild\BADGE 4\Milestone2\assignment\DVDWebApi\DVDWebApi.Data\bin\Debug\DVDWebApi.Data.pdb
+C:\Users\cashamerica12345\Documents\TheSoftwareGuild\BADGE 4\Milestone2\assignment\DVDWebApi\DVDWebApi.Data\bin\Debug\DVDWebApi.Models.dll
+C:\Users\cashamerica12345\Documents\TheSoftwareGuild\BADGE 4\Milestone2\assignment\DVDWebApi\DVDWebApi.Data\bin\Debug\DVDWebApi.Models.pdb
+C:\Users\cashamerica12345\Documents\TheSoftwareGuild\BADGE 4\Milestone2\assignment\DVDWebApi\DVDWebApi.Data\bin\Debug\DVDWebApi.Models.dll.config
+C:\Users\cashamerica12345\Documents\TheSoftwareGuild\BADGE 4\Milestone2\assignment\DVDWebApi\DVDWebApi.Data\obj\Debug\DVDWebApi.Data.csprojAssemblyReference.cache
+C:\Users\cashamerica12345\Documents\TheSoftwareGuild\BADGE 4\Milestone2\assignment\DVDWebApi\DVDWebApi.Data\obj\Debug\DVDWebApi.Data.csproj.CoreCompileInputs.cache
+C:\Users\cashamerica12345\Documents\TheSoftwareGuild\BADGE 4\Milestone2\assignment\DVDWebApi\DVDWebApi.Data\obj\Debug\DVDWebApi.Data.csproj.CopyComplete
+C:\Users\cashamerica12345\Documents\TheSoftwareGuild\BADGE 4\Milestone2\assignment\DVDWebApi\DVDWebApi.Data\obj\Debug\DVDWebApi.Data.dll
+C:\Users\cashamerica12345\Documents\TheSoftwareGuild\BADGE 4\Milestone2\assignment\DVDWebApi\DVDWebApi.Data\obj\Debug\DVDWebApi.Data.pdb
