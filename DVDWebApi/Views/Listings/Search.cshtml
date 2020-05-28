@@ -28,7 +28,7 @@
                 <input type="text" class="form-control" id="rating">
             </div>
 
-            <button id="btnSearch" class="btn btn-default">Search</button>
+            <button id="btnSearch" class="btn btn-primary">Search</button>
         </form>
     </div>
 </div>
@@ -56,7 +56,7 @@
 
             $.ajax({
                 type: 'GET',
-                url: 'http://localhost:44315/api/dvds/search?' + params,
+                url: '/api/dvds/search?' + params,
                 success: function (results) {
                     console.log("search");
                     $('#searchResults').empty();

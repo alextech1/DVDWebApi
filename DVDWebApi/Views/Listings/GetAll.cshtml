@@ -20,11 +20,10 @@
                         <p class="recentListing">@dvd.ReleaseYear</p>
                         <p class="recentListing">@dvd.Director</p>
                         <p class="recentListing">@dvd.Rating</p>
-                        <p class="recentListing">@dvd.Notes</p>
                     </div>
                     <div class="d-flex justify-content-between form-control" style="border:0px; ">
                         <div class="col-sm-6" align="center">
-                            @Html.ActionLink("Edit", "Edit", "Listings", new { id = @dvd.DvdId }, new { @class = "btn btn-primary" })
+                            @Html.ActionLink("Details", "Details", "Listings", new { id = @dvd.DvdId }, new { @class = "btn btn-primary" })
                         </div>
                         <div class="col-sm-6" align="center">
                             @using (Html.BeginForm("Delete", "Listings", new { id = @dvd.DvdId }, FormMethod.Post))

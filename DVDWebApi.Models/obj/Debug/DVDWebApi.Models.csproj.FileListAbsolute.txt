@@ -4,4 +4,3 @@ C:\Users\cashamerica12345\Documents\TheSoftwareGuild\BADGE 4\Milestone2\assignme
 C:\Users\cashamerica12345\Documents\TheSoftwareGuild\BADGE 4\Milestone2\assignment\DVDWebApi\DVDWebApi.Models\obj\Debug\DVDWebApi.Models.csproj.CoreCompileInputs.cache
 C:\Users\cashamerica12345\Documents\TheSoftwareGuild\BADGE 4\Milestone2\assignment\DVDWebApi\DVDWebApi.Models\obj\Debug\DVDWebApi.Models.dll
 C:\Users\cashamerica12345\Documents\TheSoftwareGuild\BADGE 4\Milestone2\assignment\DVDWebApi\DVDWebApi.Models\obj\Debug\DVDWebApi.Models.pdb
-C:\Users\cashamerica12345\Documents\TheSoftwareGuild\BADGE 4\Milestone2\assignment\DVDWebApi\DVDWebApi.Models\obj\Debug\DVDWebApi.Models.csprojAssemblyReference.cache

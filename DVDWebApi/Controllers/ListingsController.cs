@@ -22,6 +22,15 @@ namespace DVDWebApi.UI.Controllers
             return View(repo.GetAll());
         }
 
+        public ActionResult Details(int id)
+        {
+            var repo = DvdRepositoryFactory.GetRepository();
+
+            Dvd dvd = repo.GetById(id);
+
+            return View(dvd);
+        }
+
         public ActionResult Add()
         {
             var dvd = new Dvd();

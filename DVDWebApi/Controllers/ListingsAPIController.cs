@@ -9,20 +9,19 @@ namespace DVDWebApi.UI.Controllers
     {
         [Route("api/dvds/search")]
         [AcceptVerbs("GET")]
-        public IHttpActionResult Search(string title, int? releaseYear, string director,
-            string rating)
+        public IHttpActionResult Search([FromUri]ListingSearchParameters parameters)
         {
             var repo = DvdRepositoryFactory.GetRepository();
 
             try
             {
-                var parameters = new ListingSearchParameters()
+                /*var parameters = new ListingSearchParameters()
                 {
                     Title = title,
                     ReleaseYear = releaseYear,
                     Director = director,
                     Rating = rating
-                };
+                };*/
 
                 var result = repo.Search(parameters);
                 return Ok(result);

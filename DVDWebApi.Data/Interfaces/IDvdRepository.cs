@@ -12,5 +12,6 @@ namespace DVDWebApi.Data.DataInterfaces
         Dvd GetById(int id);
         void Delete(int id);
         IEnumerable<Dvd> Search(ListingSearchParameters parameters);
+
     }
 }

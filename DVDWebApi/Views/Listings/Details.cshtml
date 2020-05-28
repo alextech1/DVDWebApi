@@ -1,0 +1,42 @@
+﻿@model DVDWebApi.Models.Dvd
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        <h2>Details</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-8">
+        <table>
+            <tbody>
+                <tr>
+                    <td><strong>Title:</strong></td>
+                    <td>@Model.Title</td>
+                </tr>
+                <tr>
+                    <td><strong>Director:</strong></td>
+                    <td>@Model.Director</td>
+                </tr>
+                <tr>
+                    <td><strong>Release Year:</strong></td>
+                    <td>@Model.ReleaseYear</td>
+                </tr>
+                <tr>
+                    <td><strong>Notes:</strong></td>
+                    <td>@Model.Notes</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        @Html.ActionLink("Edit", "Edit", "Listings", new { id = @Model.DvdId }, new { @class = "btn btn-primary" })
+    </div>
+</div>
+
+
