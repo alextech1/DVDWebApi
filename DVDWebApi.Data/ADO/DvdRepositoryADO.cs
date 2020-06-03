@@ -1,6 +1,7 @@
 ﻿using DVDWebApi.Data.DataInterfaces;
 using DVDWebApi.Models;
 using DVDWebApi.Models.Queries;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -49,6 +50,9 @@ namespace DVDWebApi.Data.ADO
                         dvd.Director = dr["Director"].ToString();
                         dvd.Rating = dr["Rating"].ToString();
                         dvd.Notes = dr["Notes"].ToString();
+
+                        if (dr["ImageFileName"] != DBNull.Value)
+                            dvd.ImageFileName = dr["ImageFileName"].ToString();
                     }
                 }
 
@@ -81,6 +85,9 @@ namespace DVDWebApi.Data.ADO
                         row.Rating = dr["Rating"].ToString();
                         row.Notes = dr["Notes"].ToString();
 
+                        if (dr["ImageFileName"] != DBNull.Value)
+                            row.ImageFileName = dr["ImageFileName"].ToString();
+
                         dvds.Add(row);
                     }
                 }
@@ -106,7 +113,7 @@ namespace DVDWebApi.Data.ADO
                 cmd.Parameters.AddWithValue("@Director", dvd.Director);
                 cmd.Parameters.AddWithValue("@Rating", dvd.Rating);
                 cmd.Parameters.AddWithValue("@Notes", dvd.Notes);
-
+                cmd.Parameters.AddWithValue("@ImageFileName", "dvd2.png");
                 conn.Open();
 
                 cmd.ExecuteNonQuery();
@@ -167,6 +174,9 @@ namespace DVDWebApi.Data.ADO
                         row.Director = dr["Director"].ToString();
                         row.Rating = dr["Rating"].ToString();
 
+                        if (dr["ImageFileName"] != DBNull.Value)
+                            row.ImageFileName = dr["ImageFileName"].ToString();
+
                         dvds.Add(row);
                     }
                 }
@@ -188,6 +198,7 @@ namespace DVDWebApi.Data.ADO
                 cmd.Parameters.AddWithValue("@Director", dvd.Director);
                 cmd.Parameters.AddWithValue("@Rating", dvd.Rating);
                 cmd.Parameters.AddWithValue("@Notes", dvd.Notes);
+                //cmd.Parameters.AddWithValue("@ImageFileName", dvd.ImageFileName);
 
                 conn.Open();
 

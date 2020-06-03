@@ -1,6 +1,11 @@
 ﻿using DVDWebApi.Data.DataFactories;
 using DVDWebApi.Models;
+using DVDWebApi.UI.Models;
+using DVDWebApi.UI.Utilities;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace DVDWebApi.UI.Controllers
@@ -33,46 +38,55 @@ namespace DVDWebApi.UI.Controllers
 
         public ActionResult Add()
         {
-            var dvd = new Dvd();
+            var model = new DvdEditViewModel();
+            //var dvd = new Dvd();
 
-            return View(dvd);
+            return View(model.Dvd);
         }
 
         [HttpPost]
         public ActionResult Add(Dvd dvd)
         {
-            var repo = DvdRepositoryFactory.GetRepository();
+            if (ModelState.IsValid)
+            {
+                var repo = DvdRepositoryFactory.GetRepository();
 
-            repo.Insert(dvd);
+                repo.Insert(dvd);
 
-            if (!ModelState.IsValid)
-                return View(dvd);
-
-            return RedirectToAction("GetAll");
+                return RedirectToAction("GetAll");
+            }
+            else
+                return View(dvd);            
         }
 
         public ActionResult Edit(int id)
         {
-            Dvd dvd = new Dvd();
+            var model = new DvdEditViewModel();
+            //var model = new Dvd();
 
             var dvdsRepo = DvdRepositoryFactory.GetRepository();
 
-            dvd = dvdsRepo.GetById(id);
+            model.Dvd = dvdsRepo.GetById(id);
 
-            return View(dvd);
+            return View(model);
         }
 
         [HttpPost]
         public ActionResult Edit(Dvd dvd)
         {
-            var repo = DvdRepositoryFactory.GetRepository();
+            if (ModelState.IsValid)
+            {
+                var repo = DvdRepositoryFactory.GetRepository();
 
-            repo.Update(dvd);
+                repo.Update(dvd);
 
-            if (!ModelState.IsValid)
+                return RedirectToAction("GetAll");
+            }
+            else
+            {
                 return View(dvd);
+            }
 
-            return RedirectToAction("GetAll");
         }
 
         public ActionResult Delete(int id)

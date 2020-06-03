@@ -1,4 +1,4 @@
-﻿@model DVDWebApi.Models.Dvd
+﻿@model DVDWebApi.UI.Models.DvdEditViewModel
 
 @{
     ViewBag.Title = "Edit";
@@ -10,31 +10,34 @@
         @using (Html.BeginForm("Edit", "Listings", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmEditListing" }))
         {
             @Html.ValidationSummary()
-            @Html.HiddenFor(x => x.DvdId)
+            @Html.HiddenFor(x => x.Dvd.DvdId)
             <div class="col-sm-12 col-md-6">
                 <div class="form-group">
                     <label>Title</label>
-                    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                    @Html.TextBoxFor(x => x.Dvd.Title, new { @class = "form-control" })
                 </div>
                 <div class="form-group">
                     <label>ReleaseYear</label>
-                    @Html.TextBoxFor(x => x.ReleaseYear, new { @class = "form-control" })
+                    @Html.TextBoxFor(x => x.Dvd.ReleaseYear, new { @class = "form-control" })
                 </div>
                 <div class="form-group">
                     <label>Director</label>
-                    @Html.TextBoxFor(x => x.Director, new { @class = "form-control" })
+                    @Html.TextBoxFor(x => x.Dvd.Director, new { @class = "form-control" })
                 </div>
                 <div class="form-group">
                     <label>Rating</label>
-                    @Html.TextBoxFor(x => x.Rating, new { @class = "form-control" })
+                    @Html.TextBoxFor(x => x.Dvd.Rating, new { @class = "form-control" })
                 </div>
                 <div class="form-group">
                     <label>Notes</label>
-                    @Html.TextBoxFor(x => x.Notes, new { @class = "form-control" })
+                    @Html.TextBoxFor(x => x.Dvd.Notes, new { @class = "form-control" })
                 </div>
 
                 <button class="btn btn-primary">Save</button>
-            </div>            
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <img src="@Url.Content("~/Images/" + Model.Dvd.ImageFileName)" />                
+            </div>
         }
     </div>
 </div>

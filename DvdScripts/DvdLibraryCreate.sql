@@ -12,5 +12,6 @@ CREATE TABLE Dvds (
 	ReleaseYear int not null,
 	Director varchar(30) not null,
 	Rating varchar(10) not null,
-	Notes varchar(50) not null
+	Notes varchar(50) not null,
+	ImageFileName varchar(60)
 )

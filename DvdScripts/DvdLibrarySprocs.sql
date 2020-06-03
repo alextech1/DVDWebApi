@@ -8,21 +8,21 @@ GO
 
 CREATE PROC DvdsSelectAll AS
 BEGIN
-	SELECT DvdId, Title, ReleaseYear, Director, Rating, Notes
+	SELECT DvdId, Title, ReleaseYear, Director, Rating, Notes, ImageFileName
 	FROM Dvds
 END
 GO
 
 IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.ROUTINES
 	WHERE ROUTINE_NAME = 'DvdsSelect')
-		DROP PROC DvdsSelectAll
+		DROP PROC DvdsSelect
 GO
 
 CREATE PROC DvdsSelect (
 	@DvdId int
 ) AS
 BEGIN
-	SELECT DvdId, Title, ReleaseYear, Director, Rating, Notes
+	SELECT DvdId, Title, ReleaseYear, Director, Rating, Notes, ImageFileName
 	FROM Dvds
 	WHERE DvdId = @DvdId
 END
@@ -39,12 +39,13 @@ CREATE PROC DvdsInsert (
 	@ReleaseYear int,
 	@Director varchar(30),
 	@Rating varchar(10),
-	@Notes varchar(50)
+	@Notes varchar(50),
+	@ImageFileName varchar(60)
 ) AS
 BEGIN
 
-	INSERT INTO Dvds (Title, ReleaseYear, Director, Rating, Notes)
-	VALUES (@Title, @ReleaseYear, @Director, @Rating, @Notes);
+	INSERT INTO Dvds (Title, ReleaseYear, Director, Rating, Notes, ImageFileName)
+	VALUES (@Title, @ReleaseYear, @Director, @Rating, @Notes, @ImageFileName);
 
 	SET @DvdId = SCOPE_IDENTITY();
 END
@@ -76,7 +77,7 @@ GO
 
 IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.ROUTINES
 	WHERE ROUTINE_NAME = 'DvdsDelete')
-		DROP PROC DvdsSelectAll
+		DROP PROC DvdsDelete
 GO
 
 CREATE PROC DvdsDelete (
